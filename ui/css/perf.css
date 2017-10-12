@@ -1,3 +1,13 @@
+body {
+  line-height: inherit;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.checkbox label {
+    font-weight: normal;
+}
+
 .blink {
 animation: blink 1s ease-in-out infinite alternate;
 }
@@ -16,6 +26,14 @@ to { opacity: 0; }
     border: none;
     color: #555;
     background: #f8f8f8;
+}
+
+.navbar-right {
+    flex-direction: row;
+}
+
+login {
+    align-self: center;
 }
 
 #graph-chooser { flex: none; width: 240px; padding: 8px; }
@@ -61,6 +79,7 @@ to { opacity: 0; }
     visibility: hidden;
     pointer-events: none;
     width: 280px;
+    line-height: 1.42;
 }
 #graph-tooltip.locked {
     pointer-events: auto;
@@ -183,7 +202,7 @@ to { opacity: 0; }
 .btn-group-vertical {
   flex: none;
   position: relative;
-  top: 310px;
+  top: 115px;
   padding: 3px;
 }
 
@@ -203,7 +222,8 @@ to { opacity: 0; }
 
 .choose-test-list {
   margin-top: 8px;
-  height: 200px;
+  height: 97px;
+  font-size: 14px;
 }
 
 .test-loading-placeholder {
@@ -234,7 +254,8 @@ to { opacity: 0; }
 }
 
 .centered-element {
-  flex: none;
+  flex: 2;
+  margin-left: 16px
 }
 
 .compare-form {
@@ -243,13 +264,17 @@ to { opacity: 0; }
   flex-flow: column;
 }
 
+.compare-form.centered-element {
+    margin: 0 20px 0 20px;
+}
+
 .compare-form .form-group {
   display: flex;
   flex-flow: row;
   flex: none;
 }
 
-.compare-form .form-group .panel {
+.compare-form .form-group .card {
   flex: none;
   width: 360px;
   height: 250px;
@@ -266,6 +291,8 @@ to { opacity: 0; }
 .compare-form .form-group .input-group-btn {
   flex: none;
   width: 80px;
+  font-size: 14px;
+  box-shadow: none;
 }
 
 .compare-table td, th {
@@ -370,14 +397,23 @@ span.compare-notsure {
     padding-right: 90px;
 }
 
+.alerts-container .alert-selects {
+    display: flex;
+}
+
 .alert-summary a {
     cursor: pointer;
+}
+
+.alert-summary {
+    margin-bottom: 20px;
 }
 
 .alert-summary-heading {
   display: flex;
   flex-flow: row;
-  padding: 0px;
+  padding: 0;
+  border-bottom: 1px solid transparent;
 }
 
 .alert-summary-header-element {
@@ -387,7 +423,8 @@ span.compare-notsure {
 
 .alert-summary-title {
     flex: auto;
-    padding: 8px 4px;
+    padding: 9px 4px;
+    line-height: 19px;
 }
 
 .alert-summary-title .anchor {
@@ -395,10 +432,31 @@ span.compare-notsure {
     font-weight: bold;
 }
 
+.alert-summary-title .dropdown {
+    vertical-align: text-bottom;
+}
+
 .alert-summary-title .icon-superscript {
   vertical-align: super;
   font-size: 0.625em;
   margin-left: -0.2em;
+}
+
+.alert-summary-title #push-dropdown {
+  padding: 0;
+}
+
+.alert-summary .compare-table {
+    margin-bottom: 0;
+}
+
+.alert-summary .card-body {
+    border-top: 1px solid #ddd;
+    padding: 15px;
+}
+
+.alert-summary .card-body p {
+    margin: 0 0 10px;
 }
 
 .dropdown {
@@ -418,9 +476,11 @@ span.compare-notsure {
 /* Table widths for alerts */
 td.alert-checkbox {
     width: 30px;
+    padding: 8px;
 }
 td.alert-title {
     text-align: left;
+    padding: 8px;
 }
 td.alert-value {
     width: 140px;
@@ -447,6 +507,10 @@ td.alert-confidence {
 }
 .alert-strike {
     text-decoration: line-through;
+}
+
+.alert-selects .form-group {
+    margin-right: 6px;
 }
 
 .compare-table-tooltip .tooltip-inner {
@@ -484,4 +548,28 @@ td.alert-confidence {
 
 .replicate-graph .mg-category-guides line {
     stroke: #ffffff;
+}
+
+/* The paginator in angular1-ui-bootstrap4 always tries to put chevrons
+   for the prev/next buttons, but they look all messed up sizing wise.
+   The paginator SHOULD show the text of Next/Previous, but it's not, so this
+   is a work-around.*/
+li.page-item .material-icons {
+    font-size: 0;
+}
+
+li.pagination-prev .material-icons::before {
+    content: "Previous";
+    font-size: 14px;
+    font-style: normal;
+}
+
+li.pagination-next .material-icons::before {
+    content: "Next";
+    font-size: 14px;
+    font-style: normal;
+}
+
+.pagination {
+    margin: 20px 0;
 }

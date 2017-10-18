@@ -25,6 +25,11 @@ require('angular-ui-bootstrap');
 require('angular-marked');
 require('../../../ui/vendor/resizer.js');
 
+// Configure Enzyme
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15.4';
+configure({ adapter: new Adapter() });
+
 const jsContext = require.context('../../../ui/js', true, /^\.\/.*\.jsx?$/);
 window.treeherder = jsContext('./treeherder.js');
 window.treeherderApp = jsContext('./treeherder_app.js');

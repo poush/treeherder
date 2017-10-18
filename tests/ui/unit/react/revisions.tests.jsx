@@ -1,5 +1,6 @@
 'use strict';
-const mount = require('enzyme').mount;
+import { mount } from 'enzyme';
+
 const revisions = require('../../../../ui/js/reactrevisions.jsx');
 const RevisionList = revisions.RevisionList;
 const RevisionItem = revisions.RevisionItem;
@@ -128,6 +129,11 @@ describe('Revision item component', () => {
                                             initialsFilter={initialsFilter} linkifyBugsFilter={linkifyBugsFilter}/>);
         const link = wrapper.find('a');
         expect(link.length).toEqual(1);
+        // TODO: Fix this...
+        //   Error:
+        //   Attempted to access ReactWrapper::node, which was previously a private property on
+        //   Enzyme ReactWrapper instances, but is no longer and should not be relied upon.
+        //   Consider using the getElement() method instead.
         expect(link.node.href).toEqual(mockData.repo.getRevisionHref());
         expect(link.node.title).toEqual(`Open revision ${mockData.revision.revision} on ${mockData.repo.url}`);
     });
@@ -147,6 +153,11 @@ describe('Revision item component', () => {
         const linkifiedCommentText = linkifyBugsFilter(escapedComment);
 
         const comment = wrapper.find('.revision-comment em');
+        // TODO: Fix this...
+        //   Error:
+        //   Attempted to access ReactWrapper::node, which was previously a private property on
+        //   Enzyme ReactWrapper instances, but is no longer and should not be relied upon.
+        //   Consider using the getElement() method instead.
         expect(comment.node.innerHTML).toEqual(linkifiedCommentText);
     });
 
@@ -167,6 +178,11 @@ describe('More revisions link component', () => {
     it('renders an "...and more" link', () => {
         const wrapper = mount(<MoreRevisionsLink href='http://more.link/'/>);
         const link = wrapper.find('a');
+        // TODO: Fix this...
+        //   Error:
+        //   Attempted to access ReactWrapper::node, which was previously a private property on
+        //   Enzyme ReactWrapper instances, but is no longer and should not be relied upon.
+        //   Consider using the getElement() method instead.
         expect(link.node.href).toEqual('http://more.link/');
         expect(link.text()).toEqual('\u2026and more');
     });

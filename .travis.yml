@@ -28,10 +28,7 @@ matrix:
       install:
         - pip install --disable-pip-version-check --require-hashes -r requirements/common.txt -r requirements/dev.txt
       script:
-        - pip check
-        - python lints/queuelint.py
-        - flake8 --show-source
-        - isort --check-only --diff --quiet
+        - false
 
     # Job 2: Linters
     - env: python3-linters
@@ -229,5 +226,5 @@ matrix:
 
 notifications:
   email:
-    on_success: never
-on_failure: always
+    on_success: always
+    on_failure: always

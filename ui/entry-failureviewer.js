@@ -19,7 +19,7 @@ require('angular-resource');
 require('angular-cookies');
 require('angular-sanitize');
 require('angular-local-storage');
-import 'bootstrap';
+require('bootstrap');
 require('angular1-ui-bootstrap4');
 require('./vendor/resizer.js');
 

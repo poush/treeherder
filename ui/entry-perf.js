@@ -22,7 +22,7 @@ require('angular-ui-router');
 require('angular-sanitize');
 require('angular-local-storage');
 require('mousetrap');
-import 'bootstrap';
+require('bootstrap');
 require('angular1-ui-bootstrap4');
 require('./vendor/angular-clipboard.js');
 // The jquery flot package does not seem to be updated on npm, so we use a local version:

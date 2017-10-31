@@ -126,6 +126,11 @@ label.dropdown-item {
     overflow: visible;
 }
 
+login {
+    align-items: center;
+    display: flex;
+}
+
 /*
  * Left hand lower navbar
  */

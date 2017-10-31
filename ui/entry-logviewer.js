@@ -17,7 +17,7 @@ require('angular-resource');
 require('angular-cookies');
 require('angular-sanitize');
 require('angular-local-storage');
-import 'bootstrap';
+require('bootstrap');
 require('./vendor/resizer.js');
 
 // Logviewer JS
